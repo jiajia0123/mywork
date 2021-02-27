@@ -2174,7 +2174,16 @@ add =document.querySelector('.add')
 tel =document.querySelector('.tel')
 section1 =document.querySelectorAll('.section1')
 
-
+for(i=0;i<records.length;i++){
+  if(records[i].鄉鎮市區 == "東區"){
+   areablock =document.createElement('div');
+   areablock.setAttribute("class","col-md-6");
+   areablock.setAttribute("data-num",i);
+   areablock.innerHTML = "<div class='bigaree'><div class='section1'><div class='titBig'>"+ records[i].名稱 +"</div><div class='titsmall'>"+records[i].鄉鎮市區+"</div></div><div class='section2'><ul><li class='opentime'>"+records[i].簡述+"</li><li class='add'>"+records[i].地址+"</li><li class='tel'>"+ records[i].電話+"</li></ul></div></div>"
+   container.appendChild(areablock);
+  }
+  
+}
 
 //下拉選單selcet帶入資料跑回圈
 for(i=0;i<districts.length;i++){
@@ -2184,16 +2193,7 @@ for(i=0;i<districts.length;i++){
 //下拉許單改變值時觸發listA行為
 sel.addEventListener("change",listA)
 
-for(i=0;i<records.length;i++){
-   if(records[i].鄉鎮市區 == "東區"){
-    areablock =document.createElement('div');
-    areablock.setAttribute("class","col-md-6");
-    areablock.setAttribute("data-num",i);
-    areablock.innerHTML = "<div class='bigaree'><div class='section1'><div class='titBig'>"+ records[i].名稱 +"</div><div class='titsmall'>"+records[i].鄉鎮市區+"</div></div><div class='section2'><ul><li class='opentime'>"+records[i].簡述+"</li><li class='add'>"+records[i].地址+"</li><li class='tel'>"+ records[i].電話+"</li></ul></div></div>"
-    container.appendChild(areablock);
-   }
-   
-}
+
 
 //listA行為
 function listA(e){
