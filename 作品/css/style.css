@@ -1,10 +1,4 @@
-.banner{
-display: block;
-width: 100%;
-background: url(../images/Hero.png) no-repeat center center; 
-height: 380px;
-background-size: cover;
-}
+.banner{display: block;width: 100%;background: url(../images/lu.png) no-repeat center center;height: 420px;background-size: cover;}
 
 html,body{
     width: 100%;
